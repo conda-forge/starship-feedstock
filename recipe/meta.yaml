@@ -1,5 +1,5 @@
 {% set name = "starship" %}
-{% set version = "0.58.0" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 8bd4cfad4bcf9694633f228de0c7dc6cfab6bb6955e2a7299ed28dd8c4d6f5e4
+  sha256: a66d47758b3dac4f1a626bb175c4847a2ef266540498a9f25222e715baf9f9db
 
 build:
   number: 0
@@ -25,7 +25,7 @@ about:
   home: https://starship.rs/
   license: ISC
   license_file: LICENSE
-  summary: 'The minimal, blazing-fast, and infinitely customizable prompt for any shell!'
+  summary: The minimal, blazing-fast, and infinitely customizable prompt for any shell!
   dev_url: https://github.com/starship/starship
 
 extra:
