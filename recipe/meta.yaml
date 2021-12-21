@@ -1,5 +1,5 @@
 {% set name = "starship" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: a66d47758b3dac4f1a626bb175c4847a2ef266540498a9f25222e715baf9f9db
+  sha256: 480fa3887041e4d6297970fda7cfbf3032b7f8626c7a20f11d86d37aaf2766f1
 
 build:
   number: 0
