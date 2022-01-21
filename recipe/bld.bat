@@ -1,3 +1,3 @@
-cargo build --release --locked --features tls-vendored
+cargo build --release --locked
 MKDIR %PREFIX%\bin
 MOVE target\release\starship.exe %PREFIX%\bin\starship.exe
