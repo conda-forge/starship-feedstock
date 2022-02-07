@@ -10,13 +10,13 @@ source:
   sha256: 3f29cb6e5cb7c673cbc1f8e91ceb4a0d1317d235b147db15e461ffec22be13a5
 
 build:
-  number: 0
-  skip: true  # [linux]
+  number: 1
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
+    - sysroot_linux-64 2.17  # [linux64]
 
 test:
   commands:
