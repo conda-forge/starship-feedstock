@@ -19,7 +19,7 @@ requirements:
     - sysroot_linux-64 2.17  # [linux64]
     - cargo-bundle-licenses
   run:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.10") }}  # [osx]
+    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.10") }}  # [osx and x86_64]
 
 test:
   commands:
