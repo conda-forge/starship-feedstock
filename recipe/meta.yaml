@@ -10,7 +10,11 @@ source:
   sha256: 4151b3133f3fb0e649847f7714ac77282a4e2dd47fda7f5a08a4f7e87f44b277
 
 build:
-  number: 0
+  number: 1
+  ignore_run_exports:
+    - libcxx  # [osx]
+    - libstdcxx-ng  # [linux]
+    - vs2015_runtime  # [win]
 
 requirements:
   build:
