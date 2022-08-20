@@ -20,6 +20,8 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
+    - make  # [linux]
+    - cmake  # [not win]
     - sysroot_linux-64 2.17  # [linux64]
     - cargo-bundle-licenses
   run:
