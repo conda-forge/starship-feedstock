@@ -1,11 +1,11 @@
-About starship
-==============
+About starship-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/starship-feedstock/blob/main/LICENSE.txt)
 
 Home: https://starship.rs/
 
 Package license: ISC
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/starship-feedstock/blob/main/LICENSE.txt)
 
 Summary: The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
