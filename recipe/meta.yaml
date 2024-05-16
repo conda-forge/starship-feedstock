@@ -1,5 +1,5 @@
 {% set name = "starship" %}
-{% set version = "1.18.2" %}
+{% set version = "1.19.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 505100002efe93dbff702edd82f814cadc340335487993e76dd6777dba461a7a
+  sha256: cf789791b5c11d6d7a00628590696627bb8f980e3d7c7a0200026787b08aba37
 
 build:
   number: 0
@@ -19,13 +19,12 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - {{ compiler('rust') }}
     - make  # [linux]
     - cmake  # [not win]
-    - sysroot_linux-64 2.17  # [linux64]
     - cargo-bundle-licenses
   run:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.12") }}  # [osx and x86_64]
 
 test:
   commands:
