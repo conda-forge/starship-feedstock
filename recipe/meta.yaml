@@ -11,17 +11,16 @@ source:
 
 build:
   number: 1
-  ignore_run_exports:
-    # don't ignore all run-exports from {{ compiler('cxx') }}, we need libgcc
-    - libstdcxx     # [linux]
-    - libstdcxx-ng  # [linux]
   ignore_run_exports_from:
-    - {{ compiler('cxx') }}  # [not linux]
+    # we want to ignore libstdcxx, but not libgcc; the latter also comes in through
+    # compiler('c'), and conda keeps that despite ignoring the cxx run-exports
+    - {{ compiler('cxx') }}
 
 requirements:
   build:
+    - {{ stdlib('c') }}
+    - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ stdlib("c") }}
     - {{ compiler('rust') }}
     - make  # [linux]
     - cmake  # [not win]
