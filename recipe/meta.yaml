@@ -10,16 +10,17 @@ source:
   sha256: 851d84be69f9171f10890e3b58b8c5ec6057dd873dc83bfe0bdf965f9844b5dc
 
 build:
-  number: 0
-  ignore_run_exports:
-    - libcxx  # [osx]
-    - libstdcxx-ng  # [linux]
-    - vs2015_runtime  # [win]
+  number: 1
+  ignore_run_exports_from:
+    # we want to ignore libstdcxx, but not libgcc; the latter also comes in through
+    # compiler('c'), and conda keeps that despite ignoring the cxx run-exports
+    - {{ compiler('cxx') }}
 
 requirements:
   build:
+    - {{ stdlib('c') }}
+    - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ stdlib("c") }}
     - {{ compiler('rust') }}
     - make  # [linux]
     - cmake  # [not win]
