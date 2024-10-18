@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
-    - make  # [linux]
+    - make  # [not win]
     - cmake  # [not win]
     - cargo-bundle-licenses
   run:
