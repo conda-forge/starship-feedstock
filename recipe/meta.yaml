@@ -1,5 +1,5 @@
 {% set name = "starship" %}
-{% set version = "1.20.1" %}
+{% set version = "1.21.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 851d84be69f9171f10890e3b58b8c5ec6057dd873dc83bfe0bdf965f9844b5dc
+  sha256: 2f068545f270733add06c90592f3fb36422b8f650853f707956d24c06041b751
 
 build:
-  number: 1
+  number: 0
   ignore_run_exports_from:
     # we want to ignore libstdcxx, but not libgcc; the latter also comes in through
     # compiler('c'), and conda keeps that despite ignoring the cxx run-exports
@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
-    - make  # [linux]
+    - make  # [not win]
     - cmake  # [not win]
     - cargo-bundle-licenses
   run:
