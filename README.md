@@ -201,6 +201,3 @@ Feedstock Maintainers
 
 * [@m-rossi](https://github.com/m-rossi/)
 
-
-<!-- dummy commit to enable rerendering -->
-
