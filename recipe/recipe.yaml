@@ -1,0 +1,48 @@
+context:
+  version: "1.27.0"
+
+package:
+  name: starship
+  version: ${{ version }}
+
+source:
+  url: https://github.com/${{ name }}/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: f1887ffa88a7ba437d2932501794047e28d03387996f7d1c364631c053cffc44
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ compiler('rust') }}
+    - ${{ stdlib('c') }}
+    - cargo-bundle-licenses
+    - if: not win
+      then:
+        - make
+        - cmake
+  run:
+  ignore_run_exports:
+    from_package:
+      # we want to ignore libstdcxx, but not libgcc; the latter also comes in through
+      # compiler('c'), and conda keeps that despite ignoring the cxx run-exports
+      - ${{ compiler('cxx') }}
+
+tests:
+  - scripts:
+      - starship -h
+
+about:
+  homepage: https://starship.rs/
+  summary: 'The minimal, blazing-fast, and infinitely customizable prompt for any shell!'
+  license: ISC
+  license_file:
+    - LICENSE
+    - THIRDPARTY.yml
+  repository: https://github.com/starship/starship
+
+extra:
+  recipe-maintainers:
+    - m-rossi
