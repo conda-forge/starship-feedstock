@@ -16,7 +16,6 @@ build:
     - if: ppc64le
       then:
         - export CFLAGS_powerpc64le_unknown_linux_gnu="${CFLAGS}"
-        - unset CFLAGS
     - if: unix
       then:
         - cargo build --release --locked --target $CARGO_BUILD_TARGET
